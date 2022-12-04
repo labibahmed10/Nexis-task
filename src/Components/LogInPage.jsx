@@ -31,6 +31,7 @@ const LogInPage = () => {
                   </button>
                </div>
             </form>
+
             <div className="flex justify-center gap-2">
                <h6>Don't have an account?</h6>
                <p className="text-[14px] text-[#1678CB] underline font-semibold">SIGNUP HERE</p>
