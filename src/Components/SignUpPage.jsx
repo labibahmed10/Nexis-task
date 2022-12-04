@@ -118,7 +118,7 @@ const SignUpPage = () => {
                   </form>
 
                   <div className="flex md:justify-center items-center md:gap-2 gap-1 mt-24">
-                     <h6 className="text-sm">Already have an account?</h6>
+                     <h6 className="md:text-base text-sm">Already have an account?</h6>
                      <p
                         onClick={() => navigate("/login")}
                         className="md:text-[14px] text-[10px] text-[#1678CB] underline font-semibold cursor-pointer"

@@ -7,7 +7,7 @@ import Attendance from "./Components/Attendance/Attendance";
 
 function App() {
    return (
-      <main className="flex md:flex-row flex-col md:justify-center md:items-center md:mt-32 px-5 py-10">
+      <main className="flex md:flex-row flex-col md:justify-center md:items-center md:mt-28 px-5 md:py-0 py-10">
          <Routes>
             <Route path="/" element={<SignUpPage />}></Route>
             <Route index path="signup" element={<SignUpPage />}></Route>

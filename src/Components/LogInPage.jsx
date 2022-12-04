@@ -29,9 +29,9 @@ const LogInPage = () => {
    };
 
    return (
-      <section className="flex items-center justify-center">
+      <section className="flex md:flex-row flex-col items-center justify-center">
          <SideOfPage />
-         <div className="flex flex-col shadow-[0px_-10px_20px_-6px_rgb(0_0_0_/_0.1),_0_10px_20px_-6px_rgb(0_0_0_/_0.1)] w-[30rem] h-[40rem] p-20">
+         <div className="flex flex-col shadow-[0px_-10px_20px_-6px_rgb(0_0_0_/_0.1),_0_10px_20px_-6px_rgb(0_0_0_/_0.1)] md:w-[30rem] md:h-[40rem] md:p-20 p-5">
             <h4 className="text-[20px] font-semibold text-center">Log in Form</h4>
 
             <form action="" className="flex flex-col mt-24" onSubmit={handleLogin}>
@@ -59,16 +59,16 @@ const LogInPage = () => {
                <div className="flex justify-center mt-16">
                   <button
                      type="submit"
-                     className="px-8 py-3 bg-[#1678CB] text-white rounded-xl shadow-slate-700 shadow-[0px_2px_5px__rgb(0_0_0_/_0.05)]"
+                     className="md:px-8 px-5 md:py-3 py-2 bg-[#1678CB] text-white rounded-xl shadow-slate-700 shadow-[0px_2px_5px__rgb(0_0_0_/_0.05)]"
                   >
                      Log In
                   </button>
                </div>
             </form>
 
-            <div className="flex justify-center items-center gap-2 mt-24 ">
-               <h6>Don't have an account?</h6>
-               <p onClick={() => navigate("/signup")} className="text-[14px] text-[#1678CB] underline font-semibold cursor-pointer">
+            <div className="flex justify-center items-center md:gap-2 gap-1 mt-24 ">
+               <h6 className="md:text-base text-sm">Don't have an account?</h6>
+               <p onClick={() => navigate("/signup")} className="md:text-[14px] text-[10px] text-[#1678CB] underline font-semibold cursor-pointer">
                   SIGNUP HERE
                </p>
             </div>
