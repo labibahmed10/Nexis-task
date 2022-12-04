@@ -3,9 +3,12 @@ import { useState } from "react";
 import SideOfPage from "../SideOfPage";
 import { VscArrowRight } from "react-icons/vsc";
 import { useReducer } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
    const [index, setIndex] = useState(1);
+   const navigate = useNavigate();
 
    const initialState = {
       first_name: "",
@@ -50,8 +53,6 @@ const SignUpPage = () => {
 
    const [mainState, dispatch] = useReducer(reducer, initialState);
 
-   console.log(mainState);
-
    const handleSubmitNames = (e) => {
       e.preventDefault();
       setIndex(2);
@@ -71,9 +72,8 @@ const SignUpPage = () => {
       })
          .then((response) => response.json())
          .then((data) => {
-            //   data.sucess ? toast.success(data.sucess) : toast.error(data.error);
-            console.log(data);
-            //   data.sucess && navigate("/login");
+            data?.sucess ? toast.success(data.sucess) : toast.error(data.error);
+            data?.sucess && navigate("/login");
          });
    };
 
