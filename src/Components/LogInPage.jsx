@@ -17,6 +17,7 @@ const LogInPage = () => {
       e.preventDefault();
 
       fetch(`https://test.nexisltd.com/login`, {
+         mode: "no-cors",
          method: "POST",
          body: JSON.stringify(user),
       })

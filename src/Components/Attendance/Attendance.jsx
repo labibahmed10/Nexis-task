@@ -7,6 +7,7 @@ const Attendance = () => {
 
    const fetchData = async () => {
       const response = await fetch("https://test.nexisltd.com/test", {
+         mode: "no-cors",
          method: "GET",
          headers: {
             "Content-Type": "application/json",
@@ -34,11 +35,13 @@ const Attendance = () => {
 
          <table className="w-full">
             <thead className="h-16 bg-[#3b8bea] text-white">
-               <th>Image</th>
-               <th>Name</th>
-               <th>Position</th>
-               <th>Branch</th>
-               <th>Attendance</th>
+               <tr>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>Branch</th>
+                  <th>Attendance</th>
+               </tr>
             </thead>
             <tbody className="overflow-y-scroll">
                {attendance.map((data, i) => (
