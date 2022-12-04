@@ -79,10 +79,10 @@ const SignUpPage = () => {
    };
 
    return (
-      <section className="flex items-center justify-center">
+      <section className="flex md:flex-row flex-col items-center justify-center">
          <SideOfPage />
 
-         <div className="flex flex-col shadow-[0px_-10px_20px_-6px_rgb(0_0_0_/_0.1),_0_10px_20px_-6px_rgb(0_0_0_/_0.1)] w-[30rem] h-[40rem] p-20">
+         <div className="flex flex-col shadow-[0px_-10px_20px_-6px_rgb(0_0_0_/_0.1),_0_10px_20px_-6px_rgb(0_0_0_/_0.1)] md:w-[30rem] md:h-[40rem] md:p-20 p-5">
             <h4 className="text-[20px] font-semibold text-center">Sign Up Form</h4>
 
             {index === 1 && (
@@ -109,7 +109,7 @@ const SignUpPage = () => {
 
                      <div className="flex justify-center mt-16">
                         <button
-                           className="px-8 py-3 bg-[#1678CB] text-white rounded-xl flex justify-center items-center gap-1 shadow-slate-700
+                           className="md:px-8 px-5 md:py-3 py-2 bg-[#1678CB] text-white rounded-xl flex justify-center items-center gap-1 shadow-slate-700
                         shadow-[0px_2px_5px__rgb(0_0_0_/_0.05)]"
                         >
                            Next <VscArrowRight className="font-[900] text-xl" />
@@ -117,9 +117,12 @@ const SignUpPage = () => {
                      </div>
                   </form>
 
-                  <div className="flex justify-center items-center gap-2 mt-24">
-                     <h6>Already have an account?</h6>
-                     <p onClick={() => navigate("/login")} className="text-[14px] text-[#1678CB] underline font-semibold cursor-pointer">
+                  <div className="flex md:justify-center items-center md:gap-2 gap-1 mt-24">
+                     <h6 className="text-sm">Already have an account?</h6>
+                     <p
+                        onClick={() => navigate("/login")}
+                        className="md:text-[14px] text-[10px] text-[#1678CB] underline font-semibold cursor-pointer"
+                     >
                         LOGIN HERE
                      </p>
                   </div>
@@ -128,8 +131,8 @@ const SignUpPage = () => {
 
             {index === 2 && (
                <form action="" className="flex flex-col mt-24" onSubmit={handleSubmitPhoneEmail}>
-                  <div className="flex justify-center items-center gap-2">
-                     <input className="border-b-[2px] w-20 focus:outline-0 h-10 px-5" placeholder="+880" type="text" name="code" id="code" />
+                  <div className="flex justify-center items-center md:gap-2 gap-1">
+                     <input className="border-b-[2px] md:w-20 w-10 focus:outline-0 h-10 px-5" placeholder="+880" type="text" name="code" id="code" />
                      <input
                         className="border-b-[2px] w-full focus:outline-0 h-10 px-5"
                         placeholder="Write Number"
@@ -151,15 +154,15 @@ const SignUpPage = () => {
                      onChange={(e) => dispatch({ type: "email", email: e.target.value })}
                   />
 
-                  <div className="flex justify-center items-center gap-10 mt-16">
-                     <p className="ml-[-75px] cursor-pointer" onClick={() => setIndex(1)}>
+                  <div className="flex justify-center items-center md:gap-10 gap-5 mt-16">
+                     <p className="md:ml-[-75px] cursor-pointer" onClick={() => setIndex(1)}>
                         Back
                      </p>
                      <button
-                        className="px-8 py-3 bg-[#1678CB] text-white rounded-xl flex justify-center items-center gap-1 shadow-slate-700
+                        className="md:px-8 px-5 md:py-3 py-2 bg-[#1678CB] text-white rounded-xl flex justify-center items-center gap-1 shadow-slate-700
                         shadow-[0px_2px_5px__rgb(0_0_0_/_0.05)]"
                      >
-                        Next <VscArrowRight className="font-[900] text-xl" />
+                        Next <VscArrowRight className="font-[900]" />
                      </button>
                   </div>
                </form>
@@ -179,13 +182,13 @@ const SignUpPage = () => {
                   />
                   <h6 className="px-5 text-[12px]">Password must be 8 characters</h6>
 
-                  <div className="flex justify-center items-center mt-16 gap-10">
-                     <p className="ml-[-75px] cursor-pointer" onClick={() => setIndex(2)}>
+                  <div className="flex justify-center items-center mt-16 md:gap-10 gap-5">
+                     <p className="md:ml-[-75px] cursor-pointer" onClick={() => setIndex(2)}>
                         Back
                      </p>
                      <button
                         type="submit"
-                        className="px-8 py-3 bg-[#1678CB] text-white rounded-xl flex justify-center items-center gap-1 shadow-slate-700
+                        className="md:px-8 px-5 md:py-3 py-2 bg-[#1678CB] text-white rounded-xl flex justify-center items-center gap-1 shadow-slate-700
                         shadow-[0px_2px_5px__rgb(0_0_0_/_0.05)]"
                      >
                         Sign Up

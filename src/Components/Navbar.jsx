@@ -4,7 +4,7 @@ import logo from "../images/Vector.svg";
 const Navbar = () => {
    return (
       <header>
-         <img src={logo} alt="" />
+         <img className="md:w-fit w-28" src={logo} alt="" />
       </header>
    );
 };

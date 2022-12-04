@@ -4,9 +4,9 @@ import Navbar from "./Navbar";
 
 const SideOfPage = () => {
    return (
-      <section className="p-16">
+      <section className="md:p-16">
          <Navbar />
-         <img className="w-[50rem]" src={sidePic} alt="" />
+         <img className="md:w-[50rem] w-full" src={sidePic} alt="" />
       </section>
    );
 };
