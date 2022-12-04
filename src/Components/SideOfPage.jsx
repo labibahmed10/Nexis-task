@@ -1,11 +1,11 @@
 import React from "react";
 import sidePic from "../images/side.jpg";
-import logo from "../images/Vector.svg";
+import Navbar from "./Navbar";
 
 const SideOfPage = () => {
    return (
       <section className="p-16">
-         <img src={logo} alt="" />
+         <Navbar />
          <img className="w-[50rem]" src={sidePic} alt="" />
       </section>
    );

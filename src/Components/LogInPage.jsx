@@ -24,7 +24,7 @@ const LogInPage = () => {
          .then((data) => {
             localStorage.setItem("access_token", data?.access_token);
             !data.error ? toast.success("Login Successful") : toast.error(data.error);
-            
+            !data.error && navigate("/attendance");
          });
    };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import SideOfPage from "../SideOfPage";
+import SideOfPage from "./SideOfPage";
 import { VscArrowRight } from "react-icons/vsc";
 import { useReducer } from "react";
 import { toast } from "react-toastify";
