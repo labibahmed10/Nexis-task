@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const AttendedPerson = ({ data }) => {
    const [modal, setModal] = useState(false);
-   const { branch, name, profile_pic, attendance, position } = data;
+   const { branch, name, attendance, position } = data;
 
    const details = [];
 
@@ -10,7 +10,6 @@ const AttendedPerson = ({ data }) => {
       details.push({ date: key, info: attendance[key] });
    }
 
-   console.log(details);
    return (
       <React.Fragment>
          <tr className="text-center mx-auto h-20 ">
@@ -26,7 +25,7 @@ const AttendedPerson = ({ data }) => {
             <td>{branch}</td>
             <td>
                <button onClick={() => setModal(!modal)} className="px-6 py-3 bg-[#68b6f5] rounded-full text-white shadow-md">
-                  Type me
+                  Check
                </button>
             </td>
          </tr>
@@ -34,12 +33,12 @@ const AttendedPerson = ({ data }) => {
          {modal && (
             <div className="fixed top-[20%] left-[-50%] right-[-50%] bottom-[-50%] z-50 max-w-[50rem] h-[35rem] overflow-auto p-5 bg-white w-full mx-auto shadow-md">
                <table className="w-full">
-                  <tr className="flex justify-around items-center h-10 bg-[#3b8bea] text-white">
+                  <tr className="w-full flex justify-around items-center h-10 bg-[#3b8bea] text-white">
                      <td>Date</td>
                      <td>Status</td>
                   </tr>
                   {details.map((data, i) => (
-                     <tr key={i} className="h-10 w-full">
+                     <tr key={i} className="h-10">
                         <td>{data?.date}</td>
                         <td>{data?.info?.status}</td>
                      </tr>

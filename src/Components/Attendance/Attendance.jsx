@@ -7,7 +7,6 @@ const Attendance = () => {
 
    const fetchData = async () => {
       const response = await fetch("https://test.nexisltd.com/test", {
-         mode: "no-cors",
          method: "GET",
          headers: {
             "Content-Type": "application/json",

@@ -13,11 +13,10 @@ const LogInPage = () => {
       password: password,
    };
 
-   const handleLogin = (e) => {
+   const handleLogin = async (e) => {
       e.preventDefault();
 
-      fetch(`https://test.nexisltd.com/login`, {
-         mode: "no-cors",
+      await fetch(`https://test.nexisltd.com/login`, {
          method: "POST",
          body: JSON.stringify(user),
       })
