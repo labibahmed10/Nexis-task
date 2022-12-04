@@ -72,7 +72,8 @@ const SignUpPage = () => {
       })
          .then((response) => response.json())
          .then((data) => {
-            data?.sucess ? toast.success(data.sucess) : toast.error(data.error);
+            console.log(data);
+            data?.sucess ? toast.success(data?.sucess) : toast.error(data?.error);
             data?.sucess && navigate("/login");
          });
    };
@@ -81,43 +82,52 @@ const SignUpPage = () => {
       <section className="flex items-center justify-center">
          <SideOfPage />
 
-         <div className="flex flex-col justify-between shadow-[0px_-10px_20px_-6px_rgb(0_0_0_/_0.1),_0_10px_20px_-6px_rgb(0_0_0_/_0.1)] w-[30rem] h-[40rem] p-20">
+         <div className="flex flex-col shadow-[0px_-10px_20px_-6px_rgb(0_0_0_/_0.1),_0_10px_20px_-6px_rgb(0_0_0_/_0.1)] w-[30rem] h-[40rem] p-20">
             <h4 className="text-[20px] font-semibold text-center">Sign Up Form</h4>
 
             {index === 1 && (
-               <form action="" className="flex flex-col" onSubmit={handleSubmitNames}>
-                  <input
-                     className="border-b-[2px] w-full focus:outline-0 h-10 px-5"
-                     placeholder="Write First Name"
-                     type="text"
-                     name="firstName"
-                     id="firstName"
-                     value={mainState.first_name}
-                     onChange={(e) => dispatch({ type: "first_name", first_name: e.target.value })}
-                  />
-                  <input
-                     className="border-b-[2px] w-full focus:outline-0 h-10 px-5 mt-8"
-                     placeholder="Write Last Name"
-                     type="text"
-                     name="lastName"
-                     id="lastName"
-                     value={mainState.last_Name}
-                     onChange={(e) => dispatch({ type: "last_Name", last_Name: e.target.value })}
-                  />
+               <React.Fragment>
+                  <form action="" className="flex flex-col mt-24" onSubmit={handleSubmitNames}>
+                     <input
+                        className="border-b-[2px] w-full focus:outline-0 h-10 px-5"
+                        placeholder="Write First Name"
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        value={mainState.first_name}
+                        onChange={(e) => dispatch({ type: "first_name", first_name: e.target.value })}
+                     />
+                     <input
+                        className="border-b-[2px] w-full focus:outline-0 h-10 px-5 mt-8"
+                        placeholder="Write Last Name"
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        value={mainState.last_Name}
+                        onChange={(e) => dispatch({ type: "last_Name", last_Name: e.target.value })}
+                     />
 
-                  <div className="flex justify-center mt-16">
-                     <button
-                        className="px-8 py-3 bg-[#1678CB] text-white rounded-xl flex justify-center items-center gap-1 shadow-slate-700
+                     <div className="flex justify-center mt-16">
+                        <button
+                           className="px-8 py-3 bg-[#1678CB] text-white rounded-xl flex justify-center items-center gap-1 shadow-slate-700
                         shadow-[0px_2px_5px__rgb(0_0_0_/_0.05)]"
-                     >
-                        Next <VscArrowRight className="font-[900] text-xl" />
-                     </button>
+                        >
+                           Next <VscArrowRight className="font-[900] text-xl" />
+                        </button>
+                     </div>
+                  </form>
+
+                  <div className="flex justify-center items-center gap-2 mt-24">
+                     <h6>Already have an account?</h6>
+                     <p onClick={() => navigate("/login")} className="text-[14px] text-[#1678CB] underline font-semibold cursor-pointer">
+                        LOGIN HERE
+                     </p>
                   </div>
-               </form>
+               </React.Fragment>
             )}
 
             {index === 2 && (
-               <form action="" className="flex flex-col" onSubmit={handleSubmitPhoneEmail}>
+               <form action="" className="flex flex-col mt-24" onSubmit={handleSubmitPhoneEmail}>
                   <div className="flex justify-center items-center gap-2">
                      <input className="border-b-[2px] w-20 focus:outline-0 h-10 px-5" placeholder="+880" type="text" name="code" id="code" />
                      <input
@@ -156,7 +166,7 @@ const SignUpPage = () => {
             )}
 
             {index === 3 && (
-               <form action="" className="flex flex-col" onSubmit={handleSubmitPassword}>
+               <form action="" className="flex flex-col mt-24" onSubmit={handleSubmitPassword}>
                   <input
                      className="border-b-[2px] w-full focus:outline-0 h-10 px-5 mt-8"
                      autoComplete="false"
@@ -183,11 +193,6 @@ const SignUpPage = () => {
                   </div>
                </form>
             )}
-
-            <div className="flex justify-center gap-2">
-               <h6>Don't have an account?</h6>
-               <p className="text-[14px] text-[#1678CB] underline font-semibold">SIGNUP HERE</p>
-            </div>
          </div>
       </section>
    );
