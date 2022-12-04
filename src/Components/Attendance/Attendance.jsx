@@ -26,15 +26,15 @@ const Attendance = () => {
    }, []);
 
    return (
-      <section className="w-[80rem]">
+      <section className="md:w-[80rem] w-full md:overflow-auto overflow-scroll">
          <Navbar />
-         <h1 className="text-center mx-auto max-w-[480px] w-[90%] px-5 py-5 bg-[#1678CB] text-2xl font-bold text-white mt-5 mb-20">
+         <h1 className="text-center mx-auto md:w-[22rem] w-full md:px-5 px-3 md:py-5 py-2 bg-[#1678CB] md:text-2xl text-xl font-bold text-white mt-5 mb-20">
             Attendance Information
          </h1>
 
          <table className="w-full">
-            <thead className="h-16 bg-[#3b8bea] text-white">
-               <tr>
+            <thead className="h-16 bg-[#3b8bea] text-white w-full">
+               <tr className="px-5 md:px-0 md:text-base text-sm">
                   <th>Image</th>
                   <th>Name</th>
                   <th>Position</th>
@@ -42,7 +42,7 @@ const Attendance = () => {
                   <th>Attendance</th>
                </tr>
             </thead>
-            <tbody className="overflow-y-scroll">
+            <tbody className="px-5 md:px-0">
                {attendance.map((data, i) => (
                   <AttendedPerson key={i} data={data} />
                ))}
